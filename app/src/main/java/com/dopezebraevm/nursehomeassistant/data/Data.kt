@@ -68,4 +68,47 @@ object Data {
             ]
         """.trimIndent()
     }
+
+    fun getTaskTemplates() : String {
+        return """
+            [
+              {
+                "action": "Обработать медицинское оборудование",
+                "description": "",
+                "periodicity": "Каждый день",
+                "type": "medkit"
+              },
+              {
+                "action": "Проветрить помещение",
+                "description": "Необходимо заранее утеплить больного, закрыть поясницу и одеть шапку, чтобы его не продуло.",
+                "periodicity": "Утром, Днем и Вечером",
+                "type": "wind"
+              },
+              {
+                "action": "Ввести лекарство",
+                "description": "Отредактируйте описание выбрав лекарство",
+                "periodicity": "Утром и Вечером",
+                "type": "medicine"
+              },
+              {
+                "action": "Провести Санацию",
+                "description": "",
+                "periodicity": "Утром",
+                "type": "sanation"
+              },
+              {
+                "action": "Почитать перед сном",
+                "description": "",
+                "periodicity": "Вечером",
+                "type": "reading"
+              },
+              {
+                "action": "Вызвать врача",
+                "description": "",
+                "periodicity": "Утром",
+                "type": "doctor"
+              }
+            ]
+        """.trimIndent()
+    }
 }

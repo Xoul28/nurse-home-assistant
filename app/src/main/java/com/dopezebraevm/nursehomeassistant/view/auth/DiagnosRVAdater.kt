@@ -3,11 +3,8 @@ package com.dopezebraevm.nursehomeassistant.view.auth
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.AdapterListUpdateCallback
 import androidx.recyclerview.widget.RecyclerView
 import com.dopezebraevm.nursehomeassistant.R
-import com.dopezebraevm.nursehomeassistant.data.Data
-import com.dopezebraevm.nursehomeassistant.data.LocaleResolver
 import kotlinx.android.synthetic.main.item_diagnosis.view.*
 
 class DiagnosRVAdater(val callback: (String) -> Unit?) : RecyclerView.Adapter<DiagnosRVAdater.ViewHolder>() {

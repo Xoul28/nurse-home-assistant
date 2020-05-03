@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import android.widget.ArrayAdapter
-import androidx.fragment.app.Fragment
 import com.dopezebraevm.nursehomeassistant.BaseFragment
 import com.dopezebraevm.nursehomeassistant.MainActivity
 import com.dopezebraevm.nursehomeassistant.R
@@ -34,7 +32,7 @@ class LoginSecondStepFragment : BaseFragment(R.layout.fragment_login_second_step
         })
 
         btn_next.setOnClickListener {
-            (activity as MainActivity).showFragment(LoginThirdStepFragment())
+            (activity as MainActivity).showFragment(LoginQuestionnaireStepFragment())
         }
 
         adapter = DiagnosRVAdater {

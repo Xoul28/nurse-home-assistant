@@ -6,14 +6,11 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.DatePicker
-import androidx.fragment.app.Fragment
 import com.dopezebraevm.nursehomeassistant.BaseFragment
 import com.dopezebraevm.nursehomeassistant.MainActivity
 import com.dopezebraevm.nursehomeassistant.R
 import com.dopezebraevm.nursehomeassistant.data.AppData
 import kotlinx.android.synthetic.main.fragment_login_first_step.*
-import kotlinx.android.synthetic.main.fragment_login_first_step.btn_next
-import kotlinx.android.synthetic.main.fragment_login_third_step.*
 import java.util.*
 
 

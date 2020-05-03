@@ -13,4 +13,10 @@ object LocaleResolver {
         val gson = GsonHelper.getGson()
         return gson.fromJson<List<String>>(json)
     }
+
+    fun getQuestionnaireList() : List<QuestionnaireJson> {
+        val json = Data.getQuestionnaireData()
+        val gson = GsonHelper.getGson()
+        return gson.fromJson<List<QuestionnaireJson>>(json)
+    }
 }

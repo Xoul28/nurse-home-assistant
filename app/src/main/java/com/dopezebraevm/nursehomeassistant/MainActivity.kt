@@ -1,9 +1,9 @@
 package com.dopezebraevm.nursehomeassistant
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.transition.Slide
 import com.dopezebraevm.nursehomeassistant.view.auth.LoginFirstStepFragment
@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        supportFragmentManager.popBackStack()
     }
 
 
@@ -35,11 +34,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.content_frame)
         setupAnimation(fragment)
         transaction.add(R.id.content_frame, fragment, tag)
+        transaction.addToBackStack(null)
         try {
             transaction.commit()
-        } catch (ignored: IllegalStateException) {
-            val s = ""
-        }
+        } catch (ignored: IllegalStateException) { }
     }
 
     private fun setupAnimation(fragment: Fragment) {

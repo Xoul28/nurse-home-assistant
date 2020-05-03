@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentHostCallback
 import com.dopezebraevm.nursehomeassistant.BaseFragment
+import com.dopezebraevm.nursehomeassistant.MainActivity
 import com.dopezebraevm.nursehomeassistant.R
 import com.dopezebraevm.nursehomeassistant.data.AppData
+import com.dopezebraevm.nursehomeassistant.view.MainFragment
 import kotlinx.android.synthetic.main.fragment_login_third_step.*
 
 class LoginThirdStepFragment : BaseFragment(R.layout.fragment_login_third_step) {
@@ -35,5 +35,9 @@ class LoginThirdStepFragment : BaseFragment(R.layout.fragment_login_third_step) 
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
         })
+
+        btn_next.setOnClickListener {
+            (activity as MainActivity).showFragment(MainFragment())
+        }
     }
 }

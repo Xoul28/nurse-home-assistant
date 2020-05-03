@@ -10,6 +10,7 @@ import androidx.transition.Slide
 import com.dopezebraevm.nursehomeassistant.view.auth.LoginFirstStepFragment
 import com.dopezebraevm.nursehomeassistant.view.task.NewTaskVO
 import com.dopezebraevm.nursehomeassistant.view.task.TaskBuilderFragment
+import com.dopezebraevm.nursehomeassistant.view.MainFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -17,8 +18,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        showFragment(TaskBuilderFragment())
-        //showFragment(LoginFirstStepFragment())
+        showFragment(MainFragment.newInstance())
 
         bottom_navigation.setOnNavigationItemSelectedListener { item -> onSelectedItem(item) }
     }

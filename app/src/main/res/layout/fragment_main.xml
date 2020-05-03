@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="План ухода"
+            android:text="Открыть план ухода"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/iv_plan"

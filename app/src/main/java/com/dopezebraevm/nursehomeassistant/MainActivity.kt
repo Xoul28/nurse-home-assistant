@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
 
-    public fun showFragment(fragment: Fragment, tag: String? = null) {
+    fun showFragment(fragment: Fragment, tag: String? = null) {
         val transaction = supportFragmentManager.beginTransaction()
         val currentFragment = supportFragmentManager.findFragmentById(R.id.content_frame)
         setupAnimation(fragment)

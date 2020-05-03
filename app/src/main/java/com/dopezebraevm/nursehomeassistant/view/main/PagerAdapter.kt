@@ -56,10 +56,16 @@ class VpAdapter : RecyclerView.Adapter<VpAdapter.PagerVH>() {
 
         fun executeTask(task: TaskVO) {
             adapter.deleteTask(task)
+            adapter.enableSeparator()
+            adapter.addTask(task)
+            adapter.selectFirst()
         }
 
         fun skipTask(task: TaskVO) {
             adapter.deleteTask(task)
+            adapter.enableSeparator()
+            adapter.addTask(task)
+            adapter.selectFirst()
         }
 
         fun fideTask(taskVO: TaskVO) {

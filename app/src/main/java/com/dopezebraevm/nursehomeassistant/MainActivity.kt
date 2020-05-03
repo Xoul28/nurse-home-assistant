@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Gravity
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.transition.Slide
 import com.dopezebraevm.nursehomeassistant.view.auth.LoginFirstStepFragment
@@ -17,6 +18,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         showFragment(LoginFirstStepFragment())
 
         bottom_navigation.setOnNavigationItemSelectedListener { item -> onSelectedItem(item) }
+    }
+
+    fun showBottomNavigationBar() {
+        bottom_navigation.visibility = View.VISIBLE
     }
 
     private fun onSelectedItem(item: MenuItem): Boolean {

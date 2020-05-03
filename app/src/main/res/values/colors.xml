@@ -12,6 +12,7 @@
     <color name="alabasterB">#fbfbfb</color>
     <color name="alto">#d3d3d3</color>
     <color name="gray">#858585</color>
+    <color name="gray8E">#8E8E8E</color>
     <color name="gallery">#efefef</color>
     <color name="silverB">#BBBBBB</color>
     <color name="silver">#c9c9c9</color>
@@ -29,4 +30,5 @@
     <color name="guardsman_red">#CC0000</color>
     <color name="aqua_haze">#fafcfc</color>
     <color name="jelly_bean">#257a8a</color>
+    <color name="hippie_blue">#5a9ca9</color>
 </resources>

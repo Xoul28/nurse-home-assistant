@@ -39,5 +39,8 @@ class LoginThirdStepFragment : BaseFragment(R.layout.fragment_login_third_step) 
         btn_next.setOnClickListener {
             (activity as MainActivity).showFragment(MainFragment())
         }
+        btn_skip.setOnClickListener {
+            (activity as MainActivity).showFragment(MainFragment())
+        }
     }
 }

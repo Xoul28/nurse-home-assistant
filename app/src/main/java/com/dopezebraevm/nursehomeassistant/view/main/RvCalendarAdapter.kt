@@ -32,6 +32,18 @@ class RvCalendarAdapter : RecyclerView.Adapter<RvCalendarAdapter.CalendarVH>() {
         val lastSelectablePosition = calendars.indexOfFirst { it == selected }
         notifyItemChanged(lastSelectablePosition)
         val newPosition = calendars.indexOfFirst { it == calendar }
+        if (newPosition == -1) return
+        selected = calendar
+        notifyItemChanged(newPosition)
+    }
+
+    fun selectTask(day: Int) {
+        if (selected.id == day) return
+        val lastSelectablePosition = calendars.indexOfFirst { it == selected }
+        notifyItemChanged(lastSelectablePosition)
+        val newPosition = calendars.indexOfFirst { it.id == day }
+        if (newPosition == -1) return
+        val calendar = calendars[newPosition]
         selected = calendar
         notifyItemChanged(newPosition)
     }

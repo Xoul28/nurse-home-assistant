@@ -3,7 +3,7 @@ package com.dopezebraevm.nursehomeassistant.data
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-class LocaleResolver {
+object LocaleResolver {
 
     inline fun <reified T> Gson.fromJson(json: String) = fromJson<T>(json, object: TypeToken<T>() {}.type)
 

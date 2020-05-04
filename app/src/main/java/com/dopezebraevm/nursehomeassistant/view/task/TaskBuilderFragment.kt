@@ -104,7 +104,7 @@ class TaskBuilderFragment(newTaskVO: NewTaskVO? = null) : BaseFragment(R.layout.
 
         var newValue = ""
         val builder = AlertDialog.Builder(requireContext())
-        builder.setTitle("Name")
+        builder.setTitle("Выберите периодичность")
 
         val customLayout: View =
             layoutInflater.inflate(R.layout.alert_picker, null)

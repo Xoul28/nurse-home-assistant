@@ -9,7 +9,8 @@ import androidx.room.RoomDatabase
 @Database(
     entities = [
         TaskDB::class,
-        PlanDB::class
+        PlanDB::class,
+        MeasurePressureDB::class
     ],
     version = 1,
     exportSchema = false
@@ -17,4 +18,5 @@ import androidx.room.RoomDatabase
 abstract class AppDatabase : RoomDatabase() {
     abstract fun getTaskDao(): TaskDao
     abstract fun getPlanDao(): PlanDao
+    abstract fun getPressureDao(): PressureDao
 }

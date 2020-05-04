@@ -67,7 +67,7 @@
         <Button
             android:id="@+id/btn_next"
             android:layout_width="140dp"
-            android:layout_height="wrap_content"
+            android:layout_height="37dp"
             android:background="@drawable/btn_circle_done"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
@@ -83,7 +83,7 @@
         <Button
             android:id="@+id/btn_skip"
             android:layout_width="140dp"
-            android:layout_height="wrap_content"
+            android:layout_height="37dp"
             android:background="@drawable/btn_circle_skip"
             android:paddingStart="25dp"
             android:paddingTop="5dp"

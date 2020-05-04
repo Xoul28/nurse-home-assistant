@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_part_1_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="19dp"
+        android:text="Нелекарственная терапия боли"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_part_1_1">
+
+        <LinearLayout
+            android:id="@+id/image_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="68dp"
+                android:layout_weight="1"
+                android:src="@drawable/group_63" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="68dp"
+                android:layout_weight="1"
+                android:src="@drawable/group_64" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="68dp"
+                android:layout_weight="1"
+                android:src="@drawable/weightlifting_1" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="68dp"
+                android:layout_weight="1"
+                android:src="@drawable/holidays_1" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="60dp"
+            android:text="Существуют разные способы облегчения боли, которые можно и нужно применять наряду с медикаментозным обезболиванием."
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="60dp"
+            android:text="К ним относятся:"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_marginStart="24dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_calendar_selected"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="24dp"
+                android:textColor="@color/black"
+                android:text="массаж рук и ног, всего тела, нежное поглаживание над эпицентром боли — к этому могут быть подключены «малосильные» члены семьи и желающие помочь посетители, которым массаж может быть доверен"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_marginStart="24dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_calendar_selected"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="24dp"
+                android:textColor="@color/black"
+                android:text="холод или сухое тепло к болезненной области, что наряду с массажем способствует гашению болевой пульсации в спинном мозге"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_marginStart="24dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_calendar_selected"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="24dp"
+                android:textColor="@color/black"
+                android:text="максимальная физическая активность, обеспеченная приспособлениями для ухода за собой и удобно оборудованным домашним местом для интересных занятий и работы. Она препятствует одеревенению мышц, вызывающему боль, и подключает головной мозг к занятиям, отвлекающим его от анализа боли"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_marginStart="24dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_calendar_selected"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="24dp"
+                android:textColor="@color/black"
+                android:text="общение с домашними животными, которые дают нам примеры безмятежности и одаривают безусловной любовью"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

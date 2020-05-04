@@ -31,4 +31,13 @@
     <color name="aqua_haze">#fafcfc</color>
     <color name="jelly_bean">#257a8a</color>
     <color name="hippie_blue">#5a9ca9</color>
+
+    <array name="gradient_colors">
+        <item>#5A9CA9</item>
+        <item>#ffd900</item>
+        <item>#ffd900</item>
+        <item>#ff9100</item>
+        <item>#ff0000</item>
+        <item>#ff0000</item>
+    </array>
 </resources>

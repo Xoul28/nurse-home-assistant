@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val currentFragment: Fragment? = supportFragmentManager.findFragmentById(R.id.content_frame)
         currentFragment?.let {
             if (currentFragment is MainFragment) {
+
             }
         }
     }

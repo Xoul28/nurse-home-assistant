@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     android:background="@color/aqua_haze">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
     <ImageView
         android:id="@+id/iv_header"
         android:layout_width="0dp"
@@ -52,8 +60,6 @@
         android:layout_height="0dp"
         android:layout_marginTop="57dp"
         android:layout_marginBottom="15dp"
-        android:paddingEnd="25dp"
-        android:paddingStart="25dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_help_info"
         app:layout_constraintTop_toBottomOf="@+id/ll_description"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -78,7 +84,7 @@
     <Button
         android:id="@+id/btn_back"
         android:layout_width="180dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:textSize="20sp"
         android:text="Вернуться"
         android:paddingEnd="5dp"

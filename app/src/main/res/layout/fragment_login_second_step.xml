@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     android:background="@color/aqua_haze">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
     <ImageView
         android:id="@+id/iv_header"
         android:layout_width="0dp"
@@ -100,7 +108,7 @@
                 android:id="@+id/rv_diagnos_list"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@+id/v_line"
                 app:layout_constraintStart_toStartOf="parent"
@@ -114,14 +122,14 @@
     <Button
         android:id="@+id/btn_next"
         android:layout_width="180dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:textSize="20sp"
         android:text="Далее"
         android:paddingEnd="5dp"
         android:paddingStart="10dp"
+        android:layout_marginBottom="47dp"
         android:textColor="@color/white"
         android:background="@drawable/btn_circle"
-        app:layout_constraintTop_toBottomOf="@+id/body"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />

@@ -94,6 +94,7 @@
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:background="@color/white"
+                    android:paddingStart="16dp"
                     android:hint="Иван Иванов"
                     android:maxLines="1"
                     android:layout_margin="10dp"/>
@@ -123,7 +124,8 @@
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:background="@color/white"
-                    android:hint="+7 (909) 876-54-32"
+                    android:hint="+7 (999) 422-55-33"
+                    android:paddingStart="16dp"
                     android:maxLines="1"
                     android:layout_margin="10dp"/>
             </FrameLayout>

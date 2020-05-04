@@ -97,6 +97,8 @@
                     android:background="@color/white"
                     android:hint="Иван Иванов"
                     android:maxLines="1"
+                    android:paddingStart="16dp"
+                    android:layout_marginStart="30dp"
                     android:layout_margin="10dp"/>
             </FrameLayout>
 

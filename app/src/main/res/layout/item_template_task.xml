@@ -27,32 +27,31 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="15dp"
-            app:layout_constraintEnd_toStartOf="@+id/tv_date"
+            android:layout_marginBottom="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="Почистить зубы" />
+            app:layout_constraintEnd_toStartOf="@+id/iv_add_button"
+            android:text="Почистить зубы"  />
 
         <TextView
             android:id="@+id/tv_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/black"
+            android:textColor="#3E6D76"
             android:textStyle="bold"
             android:textAlignment="center"
-            app:layout_constraintLeft_toRightOf="@+id/tv_title"
-            app:layout_constraintRight_toLeftOf="@+id/iv_add_button"
+            android:layout_marginTop="10dp"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_title"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_title"
             tools:text="через 2 часа" />
 
         <ImageView
             android:id="@+id/iv_add_button"
-            android:layout_height="20dp"
-            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_width="25dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="15dp"
             android:layout_marginEnd="20dp"

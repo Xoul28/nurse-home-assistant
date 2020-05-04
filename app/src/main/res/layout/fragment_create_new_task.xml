@@ -181,7 +181,7 @@
                         android:layout_weight="1"
                         android:text="Выберите периодичность"
                         android:textColor="@color/black"
-                        android:textSize="12sp" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 

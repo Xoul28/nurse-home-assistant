@@ -23,7 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="чтобы мы могли оценить ваше состояние"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_title"
         app:layout_constraintStart_toStartOf="@+id/tv_title"
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
@@ -75,14 +75,14 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Нет боли"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     android:textColor="@color/black"/>
 
                 <TextView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="Невыносимая боль"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
                     android:layout_gravity="end"
@@ -204,17 +204,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_marginEnd="40dp"
-                    android:text="Боль почти не мешает заниматься обычными делами"
-                    android:textSize="10sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
-                    android:text="Ночной сон не нарушен из-за боли. Обычные анальгетики действуют не менее 4 часов."
+                    android:text="Боль почти не мешает заниматься обычными делами. Ночной сон не нарушен из-за боли. Обычные анальгетики действуют не менее 4 часов."
                     android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -242,17 +234,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_marginEnd="40dp"
-                    android:text="Боль мешает обычной жизни и не дает забыть о себе"
-                    android:textSize="10sp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
-                    android:text="Ночной сон нарушен из-за боли. Обычные анальгетики действуют менее 4 часов."
+                    android:text="Боль мешает обычной жизни и не дает забыть о себе. Ночной сон нарушен из-за боли. Обычные анальгетики действуют менее 4 часов."
                     android:textColor="@color/black"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -280,17 +264,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_marginEnd="40dp"
-                    android:text="Боль затмевает все и делает человека зависимым от помощи других"
-                    android:textSize="10sp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="40dp"
-                    android:layout_marginEnd="40dp"
-                    android:text="Ночной сон нарушен из-за боли и длится не более 30 минут. Слабые опиоидные анальгетики (трамадол) действуют менее 3-4 часов."
+                    android:text="Боль затмевает все и делает человека зависимым от помощи других. Ночной сон нарушен из-за боли и длится не более 30 минут. Слабые опиоидные анальгетики (трамадол) действуют менее 3-4 часов."
                     android:textColor="@color/black"
-                    android:textSize="12sp"/>
+                    android:textSize="14sp"/>
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
@@ -364,13 +340,13 @@
 
             <Button
                 android:id="@+id/btn_more_info"
-                android:layout_height="30dp"
-                android:layout_width="161dp"
+                android:layout_height="34dp"
+                android:layout_width="170dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/btn_more_info"
                 android:text="Хочу знать больше"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:textColor="@color/white"
                 android:drawableEnd="@drawable/ic_info_white"
                 android:textAllCaps="false"

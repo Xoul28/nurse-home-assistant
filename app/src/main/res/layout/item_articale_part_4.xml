@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="25dp"
-    android:layout_marginEnd="25dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
     android:layout_marginBottom="65dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
@@ -25,7 +25,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="10dp"
@@ -37,7 +37,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/iv_logo_1"
@@ -67,7 +67,7 @@
                 <TextView
                     android:id="@+id/description_1"
                     android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="7dp"
                     android:layout_marginEnd="18dp"
@@ -92,7 +92,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_container_back_word"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="10dp"
@@ -104,7 +104,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/iv_logo"
@@ -134,13 +134,13 @@
                 <TextView
                     android:id="@+id/description"
                     android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="7dp"
                     android:layout_marginEnd="18dp"
                     android:layout_marginBottom="10dp"
                     android:text="Ухаживая за другим, важно не забыть о себе. Вам нужны силы, чтобы продолжать заботиться о близком. Как помочь себе?"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@+id/iv_logo"
                     app:layout_constraintRight_toRightOf="parent"
@@ -158,7 +158,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="10dp"
@@ -170,7 +170,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/iv_logo_2"
@@ -200,13 +200,13 @@
                 <TextView
                     android:id="@+id/description_2"
                     android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="7dp"
                     android:layout_marginEnd="18dp"
                     android:layout_marginBottom="10dp"
                     android:text="Комфорт и активность больного во многом зависят от того, как организовано его жизненное пространство"
-                    android:textSize="12sp"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@+id/iv_logo_2"
                     app:layout_constraintRight_toRightOf="parent"

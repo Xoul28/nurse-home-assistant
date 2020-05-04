@@ -22,7 +22,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="чтобы мы могли оценить ваше состояние"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_title"
         app:layout_constraintStart_toStartOf="@+id/tv_title"
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
@@ -202,12 +202,12 @@
 
     <Button
         android:id="@+id/btn_more_info"
-        android:layout_height="30dp"
-        android:layout_width="161dp"
+        android:layout_height="34dp"
+        android:layout_width="170dp"
         android:layout_marginTop="42dp"
         android:background="@drawable/btn_more_info"
         android:text="Хочу знать больше"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:textColor="@color/white"
         android:drawableEnd="@drawable/ic_info_white"
         android:textAllCaps="false"

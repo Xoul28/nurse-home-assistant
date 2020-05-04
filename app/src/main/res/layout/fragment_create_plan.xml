@@ -81,6 +81,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tasks"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="20dp"
@@ -108,9 +109,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#5A9CA9"
         android:src="@drawable/ic_plus"
         app:layout_constraintBottom_toTopOf="@+id/btn_next"

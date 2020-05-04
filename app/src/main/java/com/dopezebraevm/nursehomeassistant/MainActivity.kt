@@ -18,13 +18,17 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        showFragment(MainFragment.newInstance())
+        showFragment(LoginFirstStepFragment())
 
         bottom_navigation.setOnNavigationItemSelectedListener { item -> onSelectedItem(item) }
     }
 
     fun showBottomNavigationBar() {
         bottom_navigation.visibility = View.VISIBLE
+    }
+
+    fun hideBottomNavigationBar() {
+        bottom_navigation.visibility = View.GONE
     }
 
     private fun onSelectedItem(item: MenuItem): Boolean {
@@ -35,7 +39,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         super.onBackPressed()
     }
 
-    fun closeFragment(payload: Any? = null) {}
+    fun closeFragment(payload: Any? = null) {
+        supportFragmentManager.popBackStack()
+    }
 
     fun showFragment(fragment: Fragment, tag: String? = null) {
         val transaction = supportFragmentManager.beginTransaction()

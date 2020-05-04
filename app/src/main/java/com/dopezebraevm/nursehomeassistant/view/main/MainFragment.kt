@@ -6,15 +6,20 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
+import com.dopezebraevm.nursehomeassistant.App
+import com.dopezebraevm.nursehomeassistant.BaseFragment
 import com.dopezebraevm.nursehomeassistant.MainActivity
 import com.dopezebraevm.nursehomeassistant.R
+import com.dopezebraevm.nursehomeassistant.data.db.TaskDB
+import com.dopezebraevm.nursehomeassistant.view.TaskVO.Companion.TASK
+import com.dopezebraevm.nursehomeassistant.view.plan.CreatePlanFragment
 import kotlinx.android.synthetic.main.fragment_main.*
 import java.util.*
 
 /**
  * Created by Evgeniy Mezentsev on 03.05.2020.
  */
-class MainFragment : Fragment(R.layout.fragment_main) {
+class MainFragment : BaseFragment(R.layout.fragment_main) {
 
     companion object {
 
@@ -33,79 +38,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         (activity as? MainActivity)?.showBottomNavigationBar()
         activity?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        activity?.window?.statusBarColor = ContextCompat.getColor(requireContext(), R.color.aqua_haze);
+        activity?.window?.statusBarColor = ContextCompat.getColor(requireContext(), R.color.aqua_haze)
         setupViewPager()
         setupRv()
 
-        calendarAdapter.setCalendarList(listOf(
-            CalendarVO(1),
-            CalendarVO(2),
-            CalendarVO(3),
-            CalendarVO(4),
-            CalendarVO(5),
-            CalendarVO(6),
-            CalendarVO(7),
-            CalendarVO(8),
-            CalendarVO(9),
-            CalendarVO(10),
-            CalendarVO(11),
-            CalendarVO(12),
-            CalendarVO(13),
-            CalendarVO(14),
-            CalendarVO(15),
-            CalendarVO(16),
-            CalendarVO(17),
-            CalendarVO(18),
-            CalendarVO(19),
-            CalendarVO(20),
-            CalendarVO(21),
-            CalendarVO(22),
-            CalendarVO(23),
-            CalendarVO(24),
-            CalendarVO(25),
-            CalendarVO(26),
-            CalendarVO(27),
-            CalendarVO(28),
-            CalendarVO(29),
-            CalendarVO(30),
-            CalendarVO(31)
-        ))
+        val tasks = App.get(requireContext()).dataBase.getTaskDao().getAll().sortedBy { it.date }
+        val firstDate = tasks.getOrNull(0)?.date ?: Date().time
+        val firstDay = Date(firstDate).date
 
-        days = listOf(
-            DayVO(1, listOf(TaskVO("1", 0, "Test1", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(2, listOf(TaskVO("11", 0, "Test2", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(3, listOf(TaskVO("12", 0, "Test3", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(4, listOf(TaskVO("13", 0, "Test4", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(5, listOf(TaskVO("14", 0,  "Test5", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(6, listOf(TaskVO("15", 0,  "Test6", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(7, listOf(TaskVO("16", 0,  "Test7", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(8, listOf(TaskVO("17", 0,  "Test8", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(9, listOf(TaskVO("18", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(10, listOf(TaskVO("19", 0,  "Test10", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(11, listOf(TaskVO("20", 0,  "Test11", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(12, listOf(TaskVO("21", 0,  "Test12", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(13, listOf(TaskVO("22", 0,  "Test13", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(14, listOf(TaskVO("23", 0,  "Test14", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(15, listOf(TaskVO("24", 0,  "Test15", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(16, listOf(TaskVO("25", 0,  "Test16", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(17, listOf(TaskVO("26", 0,  "Test17", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(18, listOf(TaskVO("27", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(19, listOf(TaskVO("28", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(20, listOf(TaskVO("29", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(21, listOf(TaskVO("30", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(22, listOf(TaskVO("31", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(23, listOf(TaskVO("32", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(24, listOf(TaskVO("33", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(25, listOf(TaskVO("34", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(26, listOf(TaskVO("35", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(27, listOf(TaskVO("36", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(28, listOf(TaskVO("37", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(29, listOf(TaskVO("38", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(30, listOf(TaskVO("39", 0, "Test9", "description", "23 day"), TaskVO("2",  0,"Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day"))),
-            DayVO(31, listOf(TaskVO("40", 0,  "Test9", "description", "23 day"), TaskVO("2", 0, "Test1", "description", "23 day"), TaskVO("3", 0, "Test1", "description", "23 day")))
-        )
-
-        adapter.setDays(days)
+        setupCalendar(firstDay)
+        setupDays(tasks)
 
         val date = Calendar.getInstance().time
         setupMounth(date.month)
@@ -114,10 +56,18 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         vp_day.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                calendarAdapter.selectTask(position + 1)
+                calendarAdapter.selectTask(days[position].day)
                 calendarLayoutManager.scrollToPositionWithOffset(position, 450)
             }
         })
+
+        iv_plan.setOnClickListener {
+            (activity as? MainActivity)?.showFragment(CreatePlanFragment.newInstance())
+        }
+
+        textView.setOnClickListener {
+            (activity as? MainActivity)?.showFragment(CreatePlanFragment.newInstance())
+        }
     }
 
     fun onClickCalendarItem(calendarVO: CalendarVO) {
@@ -170,5 +120,43 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             else -> "Январь"
         }
         tv_mounth.text = text
+    }
+
+    private fun getDaysOfMounth(): Int {
+        val calendar = Calendar.getInstance()
+        calendar.time = Date()
+        val dayOfMonth: Int = calendar.get(Calendar.DAY_OF_MONTH)
+        val mycal: Calendar = GregorianCalendar(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), dayOfMonth)
+        return mycal.getActualMaximum(Calendar.DAY_OF_MONTH)
+    }
+
+    private fun setupCalendar(startDay: Int) {
+        val daysOfMounth = getDaysOfMounth()
+        val calendars = ArrayList<CalendarVO>()
+        for (i in 1 .. daysOfMounth) {
+            calendars.add(CalendarVO(i, i >= startDay))
+        }
+        calendarAdapter.setCalendarList(calendars)
+    }
+
+    private fun setupDays(tasks: List<TaskDB>) {
+        val map = tasks.groupBy({ Date(it.date).date }, { it })
+        days = map.map {
+            DayVO(
+                day = it.key,
+                tasks = it.value.map { task ->
+                    TaskVO(
+                        id = task.taskId,
+                        title = task.title,
+                        type = TASK,
+                        description = task.description,
+                        whenExecute = task.whenExecute,
+                        taskType = task.type,
+                        completeType = task.completedType
+                    )
+                }
+            )
+        }
+        adapter.setDays(days)
     }
 }

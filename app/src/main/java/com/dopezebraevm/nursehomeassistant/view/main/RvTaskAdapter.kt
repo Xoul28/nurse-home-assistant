@@ -133,7 +133,7 @@ class RvTaskAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             }
             if (isSelectable && vo.completeType == EXECUTE) {
                 itemView.ll_btn.visibility = View.VISIBLE
-                itemView.tv_description.visibility = View.VISIBLE
+                itemView.tv_description.visibility = if (vo.description.isBlank()) View.GONE else View.VISIBLE
                 itemView.tv_description.text = vo.description
             } else {
                 itemView.ll_btn.visibility = View.GONE

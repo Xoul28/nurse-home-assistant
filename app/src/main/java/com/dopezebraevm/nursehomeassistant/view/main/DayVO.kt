@@ -14,6 +14,7 @@ data class TaskVO(
     val title: String = "",
     val description: String = "",
     val whenExecute: String = "",
+    val taskType: String = "",
     var completeType: Int = EXECUTE
 ) {
 
@@ -28,5 +29,6 @@ data class TaskVO(
 }
 
 data class CalendarVO(
-    val id: Int
+    val id: Int,
+    val isClickable: Boolean
 )

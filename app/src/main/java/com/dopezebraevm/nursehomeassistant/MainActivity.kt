@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.transition.Slide
 import com.dopezebraevm.nursehomeassistant.view.MainFragment
 import com.dopezebraevm.nursehomeassistant.view.auth.LoginFirstStepFragment
+import com.dopezebraevm.nursehomeassistant.view.encyclopedia.EncyclopediaFragment
+import com.dopezebraevm.nursehomeassistant.view.indicators.PainFragment
 import com.dopezebraevm.nursehomeassistant.view.plan.CreatePlanFragment
 import com.dopezebraevm.nursehomeassistant.view.task.NewTaskVO
 import kotlinx.android.synthetic.main.activity_main.*

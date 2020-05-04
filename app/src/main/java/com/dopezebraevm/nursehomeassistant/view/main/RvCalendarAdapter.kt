@@ -74,7 +74,11 @@ class RvCalendarAdapter : RecyclerView.Adapter<RvCalendarAdapter.CalendarVH>() {
 
         fun onBind(vo: CalendarVO, isSelected: Boolean) {
             itemView.tv_calendar_item.text = vo.id.toString()
-            itemView.cl_calendar_item.setOnClickListener { fragment.onClickCalendarItem(vo) }
+            if (vo.isClickable) {
+                itemView.cl_calendar_item.setOnClickListener { fragment.onClickCalendarItem(vo) }
+            } else {
+                itemView.cl_calendar_item.setOnClickListener { }
+            }
             if (isSelected) {
                 itemView.cl_calendar_item.setBackgroundResource(R.drawable.bg_calendar_selected)
                 itemView.tv_calendar_item.setTextColor(ContextCompat.getColor(itemView.context, R.color.white))

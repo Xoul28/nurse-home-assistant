@@ -10,6 +10,7 @@ import androidx.transition.Slide
 import com.dopezebraevm.nursehomeassistant.view.auth.LoginFirstStepFragment
 import com.dopezebraevm.nursehomeassistant.view.task.NewTaskVO
 import com.dopezebraevm.nursehomeassistant.view.task.TaskBuilderFragment
+import com.dopezebraevm.nursehomeassistant.view.MainFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -17,14 +18,17 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        showFragment(TaskBuilderFragment())
-        //showFragment(LoginFirstStepFragment())
+        showFragment(LoginFirstStepFragment())
 
         bottom_navigation.setOnNavigationItemSelectedListener { item -> onSelectedItem(item) }
     }
 
     fun showBottomNavigationBar() {
         bottom_navigation.visibility = View.VISIBLE
+    }
+
+    fun hideBottomNavigationBar() {
+        bottom_navigation.visibility = View.GONE
     }
 
     private fun onSelectedItem(item: MenuItem): Boolean {
@@ -35,7 +39,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         super.onBackPressed()
     }
 
-    fun closeFragment(payload: Any? = null) {}
+    fun closeFragment(payload: Any? = null) {
+        supportFragmentManager.popBackStack()
+    }
 
     fun showFragment(fragment: Fragment, tag: String? = null) {
         val transaction = supportFragmentManager.beginTransaction()

@@ -9,6 +9,8 @@ import com.dopezebraevm.nursehomeassistant.MainActivity
 import com.dopezebraevm.nursehomeassistant.R
 import com.dopezebraevm.nursehomeassistant.data.AppData
 import com.dopezebraevm.nursehomeassistant.view.MainFragment
+import com.dopezebraevm.nursehomeassistant.view.plan.CreatePlanFragment
+import com.dopezebraevm.nursehomeassistant.view.plan.CreatePlanFragment.Companion.LOGIN_MODE
 import kotlinx.android.synthetic.main.fragment_login_third_step.*
 
 class LoginThirdStepFragment : BaseFragment(R.layout.fragment_login_third_step) {
@@ -37,10 +39,10 @@ class LoginThirdStepFragment : BaseFragment(R.layout.fragment_login_third_step) 
         })
 
         btn_next.setOnClickListener {
-            (activity as MainActivity).showFragment(MainFragment())
+            (activity as MainActivity).showFragment(CreatePlanFragment.newInstance(LOGIN_MODE))
         }
         btn_skip.setOnClickListener {
-            (activity as MainActivity).showFragment(MainFragment())
+            (activity as MainActivity).showFragment(CreatePlanFragment.newInstance(LOGIN_MODE))
         }
     }
 }

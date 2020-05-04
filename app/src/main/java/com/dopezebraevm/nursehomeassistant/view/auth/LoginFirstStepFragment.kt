@@ -11,6 +11,8 @@ import com.dopezebraevm.nursehomeassistant.MainActivity
 import com.dopezebraevm.nursehomeassistant.R
 import com.dopezebraevm.nursehomeassistant.data.AppData
 import kotlinx.android.synthetic.main.fragment_login_first_step.*
+import kotlinx.android.synthetic.main.fragment_main.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -29,7 +31,7 @@ class LoginFirstStepFragment : BaseFragment(R.layout.fragment_login_first_step),
 
         month = calendar.get(Calendar.MONTH)
         day = calendar.get(Calendar.DAY_OF_MONTH)
-        showDate(year, month + 1, day)
+        showDate(year, month, day)
 
         datePickerDialog = DatePickerDialog(
             requireContext(), this, year, month, day
@@ -52,14 +54,32 @@ class LoginFirstStepFragment : BaseFragment(R.layout.fragment_login_first_step),
         }
     }
 
-    private fun showDate(year: Int, i: Int, day: Int) {
-        val date = StringBuilder().append(day).append("/")
-            .append(month).append("/").append(year)
+    private fun showDate(year: Int, month: Int, day: Int) {
+        val date = StringBuilder().append(day).append(" ")
+            .append(getMounth(month)).append(" ").append(year)
         tv_date_content.text = date
         AppData.account.dateOfBirth = date.toString()
     }
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         showDate(year, month, dayOfMonth)
+    }
+
+    private fun getMounth(month: Int) : String {
+        return when (month) {
+            0 -> "Январь"
+            1 -> "Февраль"
+            2 -> "Март"
+            3 -> "Апрель"
+            4 -> "Май"
+            5 -> "Июнь"
+            6 -> "Июль"
+            7 -> "Август"
+            8 -> "Сентябрь"
+            9 -> "Октябрь"
+            10 -> "Ноябрь"
+            11 -> "Декабрь"
+            else -> "Январь"
+        }
     }
 }

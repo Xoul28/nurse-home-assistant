@@ -3,15 +3,14 @@ package com.dopezebraevm.nursehomeassistant
 import android.os.Bundle
 import android.view.Gravity
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.transition.Slide
-import com.dopezebraevm.nursehomeassistant.view.auth.LoginFirstStepFragment
-import com.dopezebraevm.nursehomeassistant.view.task.NewTaskVO
-import com.dopezebraevm.nursehomeassistant.view.task.TaskBuilderFragment
 import com.dopezebraevm.nursehomeassistant.view.MainFragment
+import com.dopezebraevm.nursehomeassistant.view.auth.LoginFirstStepFragment
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
@@ -41,6 +40,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     fun closeFragment(payload: Any? = null) {
         supportFragmentManager.popBackStack()
+        val currentFragment: Fragment? = supportFragmentManager.findFragmentById(R.id.content_frame)
+        currentFragment?.let {
+            if (currentFragment is MainFragment) {
+            }
+        }
     }
 
     fun showFragment(fragment: Fragment, tag: String? = null) {

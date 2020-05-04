@@ -24,14 +24,14 @@ class RvManageTaskAdapter : RecyclerView.Adapter<RvManageTaskAdapter.ManageTaskV
     }
 
     fun selectTask(task: ManageTaskVO) {
-        val isTask = selectable == task
-        val lastSelectablePosition = tasks.indexOfFirst { it == selectable }
-        selectable = if (isTask) null else task
-        notifyItemChanged(lastSelectablePosition)
-        if (!isTask) {
-            val newPosition = tasks.indexOfFirst { it == task }
-            notifyItemChanged(newPosition)
-        }
+//        val isTask = selectable == task
+//        val lastSelectablePosition = tasks.indexOfFirst { it == selectable }
+//        selectable = if (isTask) null else task
+//        notifyItemChanged(lastSelectablePosition)
+//        if (!isTask) {
+//            val newPosition = tasks.indexOfFirst { it == task }
+//            notifyItemChanged(newPosition)
+//        }
     }
 
     fun deleteTask(task: ManageTaskVO) {
@@ -94,7 +94,7 @@ class RvManageTaskAdapter : RecyclerView.Adapter<RvManageTaskAdapter.ManageTaskV
                 itemView.shadow.visibility = View.GONE
                 itemView.margin.visibility = View.GONE
             }
-            if (isSelectable) {
+            if (true) { //TODO
                 itemView.tv_title.visibility = View.VISIBLE
                 if (vo.description.isBlank()) {
                     itemView.tv_description.visibility = View.GONE

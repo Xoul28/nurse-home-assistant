@@ -124,7 +124,7 @@ class RvTaskAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             if (vo.completeType == EXECUTE) {
                 itemView.tv_title.setTextColor(ContextCompat.getColor(itemView.context, R.color.black))
                 itemView.tv_date.setTextColor(ContextCompat.getColor(itemView.context, R.color.black))
-                itemView.iv_info.setImageResource(R.drawable.ic_info)
+                itemView.iv_info.setImageResource(R.drawable.ic_info_ber)
             } else {
                 itemView.tv_title.setTextColor(ContextCompat.getColor(itemView.context, R.color.gray8E))
                 itemView.tv_date.setTextColor(ContextCompat.getColor(itemView.context, R.color.gray8E))

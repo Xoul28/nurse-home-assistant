@@ -24,10 +24,6 @@ class EncyclopediaFragment : Fragment(R.layout.fragment_encyclopedia) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (activity as? MainActivity)?.showBottomNavigationBar()
-        activity?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-        activity?.window?.statusBarColor = ContextCompat.getColor(requireContext(), R.color.white)
-
         this.adapter = EncyclopediaRVAdapter {
             (activity as MainActivity).showFragment(ArticaleFragment())
         }

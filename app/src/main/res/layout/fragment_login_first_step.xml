@@ -76,7 +76,7 @@
                 android:id="@+id/tv_fio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ФИО больного:"
+                android:text="ФИО подопечного :"
                 android:layout_marginStart="15dp"
                 android:textSize="14sp"/>
 

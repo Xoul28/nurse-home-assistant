@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_recents"
+        android:id="@+id/action_dairy"
         android:enabled="true"
         android:title="Дневник"
         android:icon="@drawable/ic_dairy"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_favorites"
+        android:id="@+id/action_tasks"
         android:enabled="true"
         android:title="Задачи"
         android:icon="@drawable/ic_tasks"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_nearby"
+        android:id="@+id/action_help"
         android:enabled="true"
         android:title="Помощь"
         android:icon="@drawable/ic_help"

@@ -7,11 +7,10 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.transition.Slide
-import com.dopezebraevm.nursehomeassistant.view.ArticaleFragment
 import com.dopezebraevm.nursehomeassistant.view.MainFragment
 import com.dopezebraevm.nursehomeassistant.view.auth.LoginFirstStepFragment
-import com.dopezebraevm.nursehomeassistant.view.encyclopedia.EncyclopediaFragment
-import com.dopezebraevm.nursehomeassistant.view.indicators.PainFragment
+import com.dopezebraevm.nursehomeassistant.view.dairy.DairyFragment
+import com.dopezebraevm.nursehomeassistant.view.help.HelpFragment
 import com.dopezebraevm.nursehomeassistant.view.plan.CreatePlanFragment
 import com.dopezebraevm.nursehomeassistant.view.task.NewTaskVO
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,12 +18,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
+    companion object {
+        const val DAIRY_TAG = "dairy"
+        const val TASKS_TAG = "tasks"
+        const val HELP_TAG = "help"
+    }
+
+    private var currentFragment: Fragment? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        showFragment(ArticaleFragment())
-//        if (App.get(this).prefHelper.isNotFirstStart()) showFragment(MainFragment.newInstance())
-//        else showFragment(LoginFirstStepFragment())
+        if (App.get(this).prefHelper.isNotFirstStart()) {
+            showNavFragment(MainFragment(), TASKS_TAG)
+            bottom_navigation.selectedItemId = R.id.action_tasks
+        } else showFragment(LoginFirstStepFragment())
 
         bottom_navigation.setOnNavigationItemSelectedListener { item -> onSelectedItem(item) }
     }
@@ -38,6 +46,11 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     }
 
     private fun onSelectedItem(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_dairy -> showNavFragment(DairyFragment.newInstance(), DAIRY_TAG)
+            R.id.action_tasks -> showNavFragment(MainFragment.newInstance(), TASKS_TAG)
+            R.id.action_help -> showNavFragment(HelpFragment(), HELP_TAG)
+        }
         return true
     }
 
@@ -75,6 +88,25 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         try {
             transaction.commit()
         } catch (ignored: IllegalStateException) { }
+    }
+
+    private fun showNavFragment(fragment: Fragment, tag: String) {
+        if (tag == currentFragment?.tag) return
+        val transaction = supportFragmentManager.beginTransaction()
+        if (currentFragment?.isVisible == true) {
+            currentFragment?.let { transaction.hide(it) }
+        }
+        var newFragment = supportFragmentManager.findFragmentByTag(tag)
+        if (newFragment == null) {
+            newFragment = fragment
+            transaction.add(R.id.content_frame, newFragment, tag)
+        }
+        currentFragment = newFragment
+        transaction.show(newFragment)
+        try {
+            transaction.commitNow()
+        } catch (ignored: java.lang.IllegalStateException) {
+        }
     }
 
     private fun setupAnimation(fragment: Fragment) {

@@ -9,7 +9,7 @@
         android:id="@+id/tv_question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Способен ли больной передвигаться самостоятельно?"
+        android:text="Способен ли подопечный передвигаться самостоятельно?"
         android:textSize="24sp"
         android:textColor="#5A9CA9"
         app:layout_constraintTop_toTopOf="parent"

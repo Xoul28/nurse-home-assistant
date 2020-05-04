@@ -89,10 +89,10 @@ class RvManageTaskAdapter : RecyclerView.Adapter<RvManageTaskAdapter.ManageTaskV
             itemView.tv_date_center.text = vo.whenExecute
             if (isLast) {
                 itemView.shadow.visibility = View.VISIBLE
-                itemView.margin.visibility = View.VISIBLE
+                //itemView.margin.visibility = View.VISIBLE
             } else {
                 itemView.shadow.visibility = View.GONE
-                itemView.margin.visibility = View.GONE
+                //itemView.margin.visibility = View.GONE
             }
             if (true) { //TODO
                 itemView.tv_title.visibility = View.VISIBLE

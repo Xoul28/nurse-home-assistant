@@ -24,7 +24,6 @@
         app:layout_constraintRight_toRightOf="parent"
         />
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/body"
         android:orientation="vertical"
@@ -77,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ФИО подопечного :"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="30dp"
                 android:textSize="14sp"/>
 
             <FrameLayout
@@ -97,6 +96,7 @@
                     android:layout_width="match_parent"
                     android:background="@color/white"
                     android:hint="Иван Иванов"
+                    android:maxLines="1"
                     android:layout_margin="10dp"/>
             </FrameLayout>
 
@@ -104,7 +104,7 @@
                 android:id="@+id/cl_date_of_birth_container"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_marginStart="5dp">
+                android:layout_marginStart="20dp">
 
                 <TextView
                     android:id="@+id/tv_title_day_of_birth"

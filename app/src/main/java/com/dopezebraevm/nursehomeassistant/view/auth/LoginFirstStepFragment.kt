@@ -27,10 +27,10 @@ class LoginFirstStepFragment : BaseFragment(R.layout.fragment_login_first_step),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         calendar = Calendar.getInstance()
-        year = calendar.get(Calendar.YEAR)
+        year = 1980
 
-        month = calendar.get(Calendar.MONTH)
-        day = calendar.get(Calendar.DAY_OF_MONTH)
+        month = 1
+        day = 1
         showDate(year, month, day)
 
         datePickerDialog = DatePickerDialog(

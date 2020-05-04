@@ -16,7 +16,7 @@
 
     <ImageView
         android:id="@+id/iv_header"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_header"
         app:layout_constraintTop_toTopOf="parent"

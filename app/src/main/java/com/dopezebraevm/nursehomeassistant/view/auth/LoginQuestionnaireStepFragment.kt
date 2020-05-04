@@ -20,15 +20,21 @@ class LoginQuestionnaireStepFragment : Fragment(R.layout.fragment_questionnaire)
 
         questionVO = json.map { QuestionVO(it.question, it.answers, "") }
 
+
+        btn_back.visibility = View.GONE
+        tv_help_info.visibility = View.GONE
+
         this.adapter = PagerAdapter {
             questionVO[vp_question.currentItem].answer = it
 
             if (vp_question.currentItem + 1 == 0) {
                 ll_description.visibility = View.VISIBLE
-                btn_back.isEnabled = false
+                btn_back.visibility = View.GONE
+                tv_help_info.visibility = View.GONE
             } else {
                 ll_description.visibility = View.GONE
-                btn_back.isEnabled = true
+                btn_back.visibility = View.VISIBLE
+                tv_help_info.visibility = View.VISIBLE
             }
 
             if (vp_question.currentItem != questionVO.size - 1)
@@ -43,10 +49,12 @@ class LoginQuestionnaireStepFragment : Fragment(R.layout.fragment_questionnaire)
         btn_back.setOnClickListener {
             if (vp_question.currentItem - 1 == 0) {
                 ll_description.visibility = View.VISIBLE
-                btn_back.isEnabled = false
+                btn_back.visibility = View.GONE
+                tv_help_info.visibility = View.GONE
             } else {
                 ll_description.visibility = View.GONE
-                btn_back.isEnabled = true
+                btn_back.visibility = View.VISIBLE
+                tv_help_info.visibility = View.VISIBLE
             }
             vp_question.setCurrentItem(vp_question.currentItem - 1, true)
         }

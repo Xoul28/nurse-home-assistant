@@ -58,7 +58,7 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintRight_toRightOf="parent"
         android:text="Вы можете выбрать новую задачу из предложенных нами или создать свою"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:layout_marginTop="20dp"
         android:textColor="#8E8E8E"/>
 
@@ -126,6 +126,8 @@
                         android:layout_height="match_parent"
                         android:layout_margin="10dp"
                         android:background="@color/white"
+                        android:maxLines="1"
+                        android:inputType="text"
                         android:hint="Введите название задачи" />
                 </FrameLayout>
 
@@ -149,6 +151,7 @@
                         android:layout_margin="10dp"
                         android:background="@color/white"
                         android:gravity="top"
+                        android:maxLines="1"
                         android:hint="Напишите описание, чтобы не забыть о важных деталях"
                         android:textAlignment="gravity" />
                 </FrameLayout>
@@ -205,7 +208,7 @@
         android:id="@+id/cl_search_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintTop_toBottomOf="@+id/cl_new_task_data_container"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">

@@ -124,7 +124,7 @@
                             android:layout_height="wrap_content"
                             android:text="Иногда справится самостоятельно невозможно.  Здесь собраны контакты организаций, в которые можно обратиться"
                             android:textColor="@color/gray8E"
-                            android:textSize="12sp"
+                            android:textSize="14sp"
                             app:layout_constraintEnd_toEndOf="@+id/tv_three"
                             app:layout_constraintStart_toStartOf="parent" />
 
@@ -140,7 +140,7 @@
                         android:gravity="center_vertical"
                         android:text="Подробнее"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -255,7 +255,7 @@
                             android:layout_height="wrap_content"
                             android:text="Уход за тяжелобольным — очень большой стресс. Мы собрали для вас номера тех, кто может помочь."
                             android:textColor="@color/gray8E"
-                            android:textSize="12sp"
+                            android:textSize="14sp"
                             app:layout_constraintEnd_toEndOf="@+id/tv_three"
                             app:layout_constraintStart_toStartOf="parent" />
 
@@ -277,7 +277,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Получение экстренной психологической помощи\nВремя работы: с 9:00 до 21:00, воскресенье – выходной"
                                 android:textColor="@color/gray8E"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 app:layout_constraintEnd_toEndOf="@+id/tv_three"
                                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -311,7 +311,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Индивидуальная и семейная психологическая помощь\nВремя работы: круглосуточно"
                                 android:textColor="@color/gray8E"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 app:layout_constraintEnd_toEndOf="@+id/tv_three"
                                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -339,7 +339,7 @@
                         android:gravity="center_vertical"
                         android:text="Свернуть"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="12sp"
+                        android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

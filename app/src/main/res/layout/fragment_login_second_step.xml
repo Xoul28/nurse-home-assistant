@@ -26,13 +26,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/body"
-        android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/iv_header"
+        app:layout_constraintBottom_toTopOf="@+id/btn_next"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_header">
 
         <LinearLayout
             android:id="@+id/ll_description"
@@ -40,58 +41,59 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            android:orientation="vertical">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tv_title_description"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Расскажите о диагнозе"
-                android:textSize="18sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tv_content_description"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="это нужно, чтобы мы могли давать вам подходящие рекомендации"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/title_diagnos"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
             android:text="Диагноз:"
             android:textColor="@color/black"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="15dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll_description"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/ll_description" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:background="@drawable/bg_bubble_shadow"
-            app:layout_constraintTop_toBottomOf="@+id/title_diagnos"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/title_diagnos">
 
             <EditText
                 android:id="@+id/et_diagnos"
-                android:layout_height="40dp"
                 android:layout_width="0dp"
-                android:background="@color/white"
+                android:layout_height="40dp"
                 android:layout_margin="10dp"
+                android:background="@color/white"
                 android:hint="Выберите из списка"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/v_line"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/v_line"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <View
                 android:id="@+id/v_line"
@@ -99,21 +101,20 @@
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/colorPrimary"
-                app:layout_constraintTop_toBottomOf="@+id/et_diagnos"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_diagnos" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_diagnos_list"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="250dp"
                 android:layout_marginStart="10dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@+id/v_line"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/v_line" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

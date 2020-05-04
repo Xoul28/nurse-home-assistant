@@ -36,15 +36,21 @@ class RvManageTaskAdapter : RecyclerView.Adapter<RvManageTaskAdapter.ManageTaskV
 
     fun deleteTask(task: ManageTaskVO) {
         val lastSelectablePosition = tasks.indexOfFirst { it == task }
+        val isLastItem = lastSelectablePosition == tasks.lastIndex
         tasks.removeAt(lastSelectablePosition)
         if (task == selectable) selectable = null
         notifyItemRemoved(lastSelectablePosition)
+        if (isLastItem && tasks.isNotEmpty()) notifyItemChanged(tasks.lastIndex)
     }
 
     fun addTask(task: ManageTaskVO) {
         if (tasks.contains(task)) return
         tasks.add(task)
-        notifyItemChanged(tasks.size)
+        if (tasks.size > 1) {
+            notifyItemRangeChanged(tasks.lastIndex - 1, tasks.lastIndex)
+        } else {
+            notifyItemChanged(tasks.lastIndex)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ManageTaskVH {

@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.dopezebraevm.nursehomeassistant.data.db.AppDatabase
 import com.dopezebraevm.nursehomeassistant.data.db.DataBaseBuilderRoom
+import com.dopezebraevm.nursehomeassistant.data.pref.PrefHelper
 import com.dopezebraevm.nursehomeassistant.domain.GenerateTaskInteractor
 
 /**
@@ -20,14 +21,16 @@ class App : Application() {
     }
 
     lateinit var dataBase: AppDatabase
+    lateinit var prefHelper: PrefHelper
     lateinit var generateTaskInteractor: GenerateTaskInteractor
 
     override fun onCreate() {
         super.onCreate()
 
         dataBase = DataBaseBuilderRoom(this).build()
+        prefHelper = PrefHelper(this)
         generateTaskInteractor = GenerateTaskInteractor(dataBase)
-        generateTaskInteractor.generate()
+        generateTaskInteractor.generateSync()
     }
 
 }

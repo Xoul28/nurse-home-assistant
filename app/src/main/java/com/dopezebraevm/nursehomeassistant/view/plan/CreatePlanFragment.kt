@@ -90,6 +90,7 @@ class CreatePlanFragment : BaseFragment(R.layout.fragment_create_plan) {
             }
             App.get(requireContext()).dataBase.getPlanDao().updateList(plans)
             App.get(requireContext()).generateTaskInteractor.generate()
+            App.get(requireContext()).prefHelper.putNotFirstStart(true)
             (activity as? MainActivity)?.showFragment(MainFragment.newInstance())
         }
 
@@ -121,6 +122,18 @@ class CreatePlanFragment : BaseFragment(R.layout.fragment_create_plan) {
 
     fun fideTask(taskVO: ManageTaskVO) {
         adapter.selectTask(taskVO)
+    }
+
+    fun addTask(taskVO: NewTaskVO) {
+        val task = ManageTaskVO(
+            UUID.randomUUID().toString(),
+            taskVO.title,
+            taskVO.type,
+            taskVO.description,
+            taskVO.period
+        )
+        tasks.add(task)
+        adapter.addTask(task)
     }
 
     private fun setupRv() {

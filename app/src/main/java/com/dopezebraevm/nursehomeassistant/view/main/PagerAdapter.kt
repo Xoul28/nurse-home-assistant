@@ -22,6 +22,22 @@ class VpAdapter : RecyclerView.Adapter<VpAdapter.PagerVH>() {
         notifyDataSetChanged()
     }
 
+    fun addTaskInDay(task: TaskVO, day: Int) {
+        var updateIndex = -1
+        this.days = this.days.mapIndexed { index, dayVO ->
+            if (dayVO.day == day) {
+                val tasks = dayVO.tasks.toMutableList()
+                tasks.add(task)
+                updateIndex = index
+                DayVO(
+                    dayVO.day,
+                    tasks
+                )
+            } else dayVO
+        }
+        if (updateIndex != -1) notifyItemChanged(updateIndex)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PagerVH {
         return PagerVH.newInstance(parent, fragment)
     }

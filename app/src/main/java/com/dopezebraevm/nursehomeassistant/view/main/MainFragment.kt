@@ -3,7 +3,6 @@ package com.dopezebraevm.nursehomeassistant.view
 import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.dopezebraevm.nursehomeassistant.App
@@ -11,9 +10,16 @@ import com.dopezebraevm.nursehomeassistant.BaseFragment
 import com.dopezebraevm.nursehomeassistant.MainActivity
 import com.dopezebraevm.nursehomeassistant.R
 import com.dopezebraevm.nursehomeassistant.data.db.TaskDB
+import com.dopezebraevm.nursehomeassistant.view.TaskVO.Companion.EXECUTE
 import com.dopezebraevm.nursehomeassistant.view.TaskVO.Companion.TASK
 import com.dopezebraevm.nursehomeassistant.view.plan.CreatePlanFragment
+import com.dopezebraevm.nursehomeassistant.view.task.NewTaskVO
+import com.dopezebraevm.nursehomeassistant.view.task.TaskBuilderFragment
+import kotlinx.android.synthetic.main.fragment_create_plan.*
 import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_main.fab
+import kotlinx.android.synthetic.main.fragment_main.iv_plan
+import kotlinx.android.synthetic.main.fragment_main.textView
 import java.util.*
 
 /**
@@ -68,6 +74,9 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         textView.setOnClickListener {
             (activity as? MainActivity)?.showFragment(CreatePlanFragment.newInstance())
         }
+        fab.setOnClickListener {
+            (activity as? MainActivity)?.showFragment(TaskBuilderFragment())
+        }
     }
 
     fun onClickCalendarItem(calendarVO: CalendarVO) {
@@ -87,6 +96,22 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
 
     fun fideTask(task: TaskVO) {
 
+    }
+
+    fun addTask(task: NewTaskVO) {
+        val date = days.getOrNull(vp_day.currentItem) ?: return
+        adapter.addTaskInDay(
+            TaskVO(
+                UUID.randomUUID().toString(),
+                TASK,
+                task.title,
+                task.description,
+                task.period,
+                task.type,
+                EXECUTE
+            ),
+            date.day
+        )
     }
 
     private fun setupViewPager() {

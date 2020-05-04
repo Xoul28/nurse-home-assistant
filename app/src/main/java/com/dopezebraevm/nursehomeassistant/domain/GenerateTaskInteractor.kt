@@ -13,13 +13,15 @@ import kotlin.collections.ArrayList
  */
 class GenerateTaskInteractor(private val appDatabase: AppDatabase) {
 
+    fun generateSync() {
+        AsyncTask.execute { generate() }
+    }
+
     fun generate() {
-        AsyncTask.execute {
-            val plans = appDatabase.getPlanDao().getAll()
-            if (plans?.isNotEmpty() != true) return@execute
-            appDatabase.getTaskDao().deleteAll()
-            appDatabase.getTaskDao().insertList(createTasks(plans))
-        }
+        val plans = appDatabase.getPlanDao().getAll()
+        if (plans?.isNotEmpty() != true) return
+        appDatabase.getTaskDao().deleteAll()
+        appDatabase.getTaskDao().insertList(createTasks(plans))
     }
 
     private fun createTasks(plans: List<PlanDB>): List<TaskDB> {

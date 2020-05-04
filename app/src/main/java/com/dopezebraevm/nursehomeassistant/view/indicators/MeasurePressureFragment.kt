@@ -35,6 +35,7 @@ class MeasurePressureFragment : BaseFragment(R.layout.fragment_measure_pressure)
                     bottomPressure = tv_pressure_second.text.toString().toInt()
                     )
                 )
+            activity?.onBackPressed()
         }
     }
 

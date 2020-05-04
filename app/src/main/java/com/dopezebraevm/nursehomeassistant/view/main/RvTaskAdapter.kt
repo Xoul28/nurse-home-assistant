@@ -25,7 +25,7 @@ class RvTaskAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     fun setTasks(tasks: List<TaskVO>) {
         this.tasks.clear()
-        tasks.forEach { addTask(it) }
+        tasks.sortedBy { it.sortField() }.forEach { addTask(it) }
         if (tasks.isNotEmpty()) selectable = tasks[0]
         notifyDataSetChanged()
     }
@@ -115,15 +115,27 @@ class RvTaskAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         fun onBind(vo: TaskVO, isSelectable: Boolean) {
             itemView.tv_title.text = vo.title
+            if (vo.taskType == "pain_level" || vo.taskType == "pressure") itemView.btn_next.text = "Сохранить"
+            else itemView.btn_next.text = "Готово"
             if (vo.completeType == EXECUTE) {
-                itemView.tv_date.text = vo.whenExecute
+                itemView.tv_date.text = vo.whenExecute.toLowerCase()
+                itemView.tv_complete.visibility = View.GONE
+                itemView.tv_date.visibility = View.VISIBLE
+                itemView.tv_title_center.visibility = View.GONE
+                itemView.tv_title.visibility = View.VISIBLE
             } else {
-                itemView.tv_date.text = if (vo.completeType == COMPLETE) "выполнено"
+                itemView.tv_title_center.text = vo.title
+                itemView.tv_complete.text = if (vo.completeType == COMPLETE) "выполнено"
                 else "пропущено"
+                itemView.tv_complete.visibility = View.VISIBLE
+                itemView.tv_title_center.visibility = View.VISIBLE
+                itemView.tv_date.visibility = View.INVISIBLE
+                itemView.tv_title.visibility = View.INVISIBLE
             }
+
             if (vo.completeType == EXECUTE) {
                 itemView.tv_title.setTextColor(ContextCompat.getColor(itemView.context, R.color.black))
-                itemView.tv_date.setTextColor(ContextCompat.getColor(itemView.context, R.color.black))
+                itemView.tv_date.setTextColor(ContextCompat.getColor(itemView.context, R.color.colorPrimary))
                 itemView.iv_info.setImageResource(R.drawable.ic_info_ber)
             } else {
                 itemView.tv_title.setTextColor(ContextCompat.getColor(itemView.context, R.color.gray8E))

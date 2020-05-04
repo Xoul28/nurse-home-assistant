@@ -83,16 +83,12 @@ class RvManageTaskAdapter : RecyclerView.Adapter<RvManageTaskAdapter.ManageTaskV
 
         fun onBind(vo: ManageTaskVO, isSelectable: Boolean, isLast: Boolean) {
             itemView.tv_title.text = vo.title
-            itemView.tv_title_center.text = vo.title
             itemView.tv_description.text = vo.description
             itemView.tv_date.text = vo.whenExecute
-            itemView.tv_date_center.text = vo.whenExecute
             if (isLast) {
-                itemView.shadow.visibility = View.VISIBLE
-                //itemView.margin.visibility = View.VISIBLE
+                itemView.margin.visibility = View.VISIBLE
             } else {
-                itemView.shadow.visibility = View.GONE
-                //itemView.margin.visibility = View.GONE
+                itemView.margin.visibility = View.GONE
             }
             if (true) { //TODO
                 itemView.tv_title.visibility = View.VISIBLE
@@ -103,11 +99,7 @@ class RvManageTaskAdapter : RecyclerView.Adapter<RvManageTaskAdapter.ManageTaskV
                 }
                 itemView.tv_date.visibility = View.VISIBLE
                 itemView.cl_btn.visibility = View.VISIBLE
-                itemView.tv_title_center.visibility = View.GONE
-                itemView.tv_date_center.visibility = View.GONE
             } else {
-                itemView.tv_title_center.visibility = View.VISIBLE
-                itemView.tv_date_center.visibility = View.VISIBLE
                 itemView.tv_title.visibility = View.GONE
                 itemView.tv_description.visibility = View.GONE
                 itemView.tv_date.visibility = View.GONE

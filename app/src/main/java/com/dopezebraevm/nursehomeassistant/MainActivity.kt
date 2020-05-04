@@ -100,6 +100,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         if (newFragment == null) {
             newFragment = fragment
             transaction.add(R.id.content_frame, newFragment, tag)
+        } else if (newFragment is DairyFragment) {
+            newFragment.addData()
         }
         currentFragment = newFragment
         transaction.show(newFragment)

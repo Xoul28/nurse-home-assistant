@@ -33,18 +33,47 @@ class GenerateTaskInteractor(private val appDatabase: AppDatabase) {
         val tasks = ArrayList<TaskDB>()
         for (i in dayOfMonth .. daysInMonth) {
             mycal.set(Calendar.DAY_OF_MONTH, i)
-            tasks.addAll(plans.map {
-                TaskDB(
-                    taskId = UUID.randomUUID().toString(),
-                    title = it.title,
-                    type = it.type,
-                    description = it.description,
-                    whenExecute = it.whenExecute,
-                    completedType = 0,
-                    date = mycal.time.time
-                )
-            })
+            plans.forEach { tasks.addAll(createTask(it, mycal)) }
         }
         return tasks
+    }
+
+    private fun createTask(plan: PlanDB, mycal: Calendar): List<TaskDB> {
+        return when (plan.whenExecute) {
+            "Утром и вечером" -> {
+                listOf(
+                    createTaskFromPlan(plan, "Утром", mycal),
+                    createTaskFromPlan(plan, "Вечером", mycal)
+                )
+            }
+            "Утром, Днем и Вечером" -> {
+                listOf(
+                    createTaskFromPlan(plan, "Утром", mycal),
+                    createTaskFromPlan(plan, "Днем", mycal),
+                    createTaskFromPlan(plan, "Вечером", mycal)
+                )
+            }
+            "Каждый день" -> {
+                listOf(createTaskFromPlan(plan, "Днем", mycal))
+            }
+            "Раз в неделю" -> {
+                emptyList()
+            }
+            else -> {
+                listOf(createTaskFromPlan(plan, plan.whenExecute, mycal))
+            }
+        }
+    }
+
+    private fun createTaskFromPlan(plan: PlanDB, whenExecute: String, mycal: Calendar): TaskDB {
+        return TaskDB(
+            taskId = UUID.randomUUID().toString(),
+            title = plan.title,
+            type = plan.type,
+            description = plan.description,
+            whenExecute = whenExecute,
+            completedType = 0,
+            date = mycal.time.time
+        )
     }
 }

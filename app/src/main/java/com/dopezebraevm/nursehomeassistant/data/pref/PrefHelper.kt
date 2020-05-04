@@ -15,6 +15,7 @@ class PrefHelper(context: Context, mode: Int = MODE_PRIVATE) {
 
     companion object {
         const val IS_NOT_FIRST_START = "not_first_start"
+        const val GRAPH = "graph"
     }
 
     fun putString(key: String?, value: String?) {
@@ -63,5 +64,13 @@ class PrefHelper(context: Context, mode: Int = MODE_PRIVATE) {
 
     fun putNotFirstStart(isNotFirstStart: Boolean) {
         putBoolean(IS_NOT_FIRST_START, isNotFirstStart)
+    }
+
+    fun isGraph(): Boolean {
+        return getBoolean(GRAPH)
+    }
+
+    fun putGraph(isStart: Boolean) {
+        putBoolean(GRAPH, isStart)
     }
 }

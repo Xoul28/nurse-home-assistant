@@ -1,5 +1,7 @@
 package com.dopezebraevm.nursehomeassistant.view
 
+import java.util.*
+
 /**
  * Created by Evgeniy Mezentsev on 03.05.2020.
  */
@@ -25,6 +27,15 @@ data class TaskVO(
         const val EXECUTE = 0
         const val COMPLETE = 1
         const val SKIP = 2
+    }
+
+    fun sortField(): Int {
+        return when (whenExecute.toLowerCase(Locale.ROOT)) {
+            "утром" -> 0
+            "днем" -> 1
+            "вечером" -> 2
+            else -> 3
+        }
     }
 }
 

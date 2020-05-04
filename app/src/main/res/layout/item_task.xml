@@ -21,15 +21,30 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
             android:textColor="@color/black"
             android:paddingBottom="12dp"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:layout_marginTop="2dp"
             android:layout_marginEnd="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/tv_date"
+            app:layout_constraintEnd_toStartOf="@+id/tv_complete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_date"
+            tools:text="Почистить зубы" />
+
+        <TextView
+            android:id="@+id/tv_title_center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/tv_complete"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:text="Почистить зубы" />
 
         <TextView
@@ -43,25 +58,41 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_title"
             tools:text="описание" />
 
-
         <TextView
             android:id="@+id/tv_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="20dp"
-            app:layout_constraintEnd_toStartOf="@+id/iv_info"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/tv_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_title"
             app:layout_constraintTop_toTopOf="parent"
+            tools:text="через 2 часа" />
+
+        <TextView
+            android:id="@+id/tv_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/gray8E"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_info"
+            app:layout_constraintEnd_toStartOf="@+id/iv_info"
+            app:layout_constraintStart_toEndOf="@+id/tv_title"
+            app:layout_constraintTop_toTopOf="@+id/iv_info"
             tools:text="через 2 часа" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_info"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginTop="22dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_date"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_info_ber" />
 
         <LinearLayout
@@ -108,12 +139,6 @@
                 android:layout_marginStart="20dp" />
 
         </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/wild_sand"
-            app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

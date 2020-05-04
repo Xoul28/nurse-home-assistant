@@ -27,6 +27,12 @@ object LocaleResolver {
         return gson.fromJson<List<TaskTemplateJson>>(json)
     }
 
+    fun getPlanTemplateList(): List<PlanTemplateJson> {
+        val json = Data.getPlanTemplates()
+        val gson = GsonHelper.getGson()
+        return gson.fromJson<List<PlanTemplateJson>>(json)
+    }
+
     fun getEncyclopediaList() : List<EncyclopediaJson> {
         val json = Data.getEncyclopediaData()
         val gson = GsonHelper.getGson()

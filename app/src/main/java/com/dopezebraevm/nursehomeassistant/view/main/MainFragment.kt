@@ -12,6 +12,8 @@ import com.dopezebraevm.nursehomeassistant.R
 import com.dopezebraevm.nursehomeassistant.data.db.TaskDB
 import com.dopezebraevm.nursehomeassistant.view.TaskVO.Companion.EXECUTE
 import com.dopezebraevm.nursehomeassistant.view.TaskVO.Companion.TASK
+import com.dopezebraevm.nursehomeassistant.view.indicators.MeasurePressureFragment
+import com.dopezebraevm.nursehomeassistant.view.indicators.PainFragment
 import com.dopezebraevm.nursehomeassistant.view.plan.CreatePlanFragment
 import com.dopezebraevm.nursehomeassistant.view.task.NewTaskVO
 import com.dopezebraevm.nursehomeassistant.view.task.TaskBuilderFragment
@@ -87,7 +89,11 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
     }
 
     fun executeTask(task: TaskVO) {
-
+        if (task.taskType == "pain_level") {
+            (activity as? MainActivity)?.showFragment(PainFragment())
+        } else if (task.taskType == "pressure") {
+            (activity as? MainActivity)?.showFragment(MeasurePressureFragment())
+        }
     }
 
     fun skipTask(task: TaskVO) {

@@ -10,7 +10,9 @@ import com.dopezebraevm.nursehomeassistant.MainActivity
 import com.dopezebraevm.nursehomeassistant.R
 import com.dopezebraevm.nursehomeassistant.data.LocaleResolver
 import com.dopezebraevm.nursehomeassistant.data.db.PlanDB
+import com.dopezebraevm.nursehomeassistant.view.ArticaleFragment
 import com.dopezebraevm.nursehomeassistant.view.MainFragment
+import com.dopezebraevm.nursehomeassistant.view.help.ArticalWashingHeadFragment
 import com.dopezebraevm.nursehomeassistant.view.task.NewTaskVO
 import com.dopezebraevm.nursehomeassistant.view.task.TaskBuilderFragment
 import com.dopezebraevm.nursehomeassistant.view.task.TaskTemplateVO
@@ -56,7 +58,7 @@ class CreatePlanFragment : BaseFragment(R.layout.fragment_create_plan) {
 
         val plans = App.get(requireContext()).dataBase.getPlanDao().getAll()
         tasks = if (plans?.isNotEmpty() != true) {
-            LocaleResolver.getTaskTemplateList().map {
+            LocaleResolver.getPlanTemplateList().map {
                 ManageTaskVO(
                     UUID.randomUUID().toString(),
                     it.action,
@@ -106,7 +108,7 @@ class CreatePlanFragment : BaseFragment(R.layout.fragment_create_plan) {
 
 
     fun infoTask(taskVO: ManageTaskVO) {
-
+        (activity as? MainActivity)?.showFragment(ArticalWashingHeadFragment())
     }
 
     fun editTask(taskVO: ManageTaskVO) {

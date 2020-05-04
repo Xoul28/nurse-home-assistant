@@ -1,6 +1,5 @@
 package com.dopezebraevm.nursehomeassistant.view.task
 
-import android.content.DialogInterface
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,10 +9,8 @@ import com.dopezebraevm.nursehomeassistant.BaseFragment
 import com.dopezebraevm.nursehomeassistant.MainActivity
 import com.dopezebraevm.nursehomeassistant.R
 import com.dopezebraevm.nursehomeassistant.data.LocaleResolver
-import kotlinx.android.synthetic.main.alert_picker.*
 import kotlinx.android.synthetic.main.alert_picker.view.*
 import kotlinx.android.synthetic.main.fragment_create_new_task.*
-
 
 class TaskBuilderFragment(newTaskVO: NewTaskVO? = null) : BaseFragment(R.layout.fragment_create_new_task) {
 

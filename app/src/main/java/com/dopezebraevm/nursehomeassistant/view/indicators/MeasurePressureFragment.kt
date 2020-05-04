@@ -5,11 +5,9 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import com.dopezebraevm.nursehomeassistant.BaseFragment
 import com.dopezebraevm.nursehomeassistant.R
-import com.dopezebraevm.nursehomeassistant.data.db.AppDatabase
 import com.dopezebraevm.nursehomeassistant.data.db.DataBaseBuilderRoom
 import com.dopezebraevm.nursehomeassistant.data.db.MeasurePressureDB
 import kotlinx.android.synthetic.main.alert_picker.view.*
-import kotlinx.android.synthetic.main.fragment_create_new_task.*
 import kotlinx.android.synthetic.main.fragment_measure_pressure.*
 
 /**

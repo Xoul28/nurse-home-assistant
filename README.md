@@ -31,7 +31,7 @@ __Команда:__ Dope Zebra EVM
 
 ## Диплом победителя
 
-![](diplom.png)
+![](diplom_chernikov.png)
 
-[Pdf вариант](diplom.pdf)
+[Pdf вариант](diplom_chernikov.pdf)
 
